@@ -1,0 +1,19 @@
+dataset_id,city,source,file_path,acquired_at
+mumbai_boundary,Mumbai,OSM,../data/boundaries\mumbai_boundary.geojson,2026-09-04T08:03:16.852344Z
+mumbai_aoi_5km,Mumbai,OSM,../data/boundaries\mumbai_aoi_5km.geojson,2026-09-04T08:03:16.945984Z
+mumbai_roads,Mumbai,OSM,../data/osm\mumbai_roads.graphml,2026-09-04T08:08:03.810538Z
+mumbai_boundary,Mumbai,OSM,../data/boundaries\mumbai_boundary.geojson,2026-09-04T08:16:41.739149Z
+mumbai_aoi_5km,Mumbai,OSM,../data/boundaries\mumbai_aoi_5km.geojson,2026-09-04T08:16:41.867458Z
+mumbai_roads,Mumbai,OSM,../data/osm\mumbai_roads.graphml,2026-09-04T08:22:29.018433Z
+mumbai_dem_clipped,Mumbai,ISRO CartoDEM,../data/terrain/mumbai_dem_clipped.tif,2026-09-04T09:18:35.044971Z
+mumbai_dem_filled,Mumbai,Derived from DEM,../data/terrain/mumbai_dem_filled.tif,2026-09-04T09:18:35.232010Z
+mumbai_dem_clipped,Mumbai,ISRO CartoDEM,../data/terrain/mumbai_dem_clipped.tif,2026-09-04T09:21:27.448622Z
+mumbai_dem_filled,Mumbai,Derived from DEM,../data/terrain/mumbai_dem_filled.tif,2026-09-04T09:21:27.638188Z
+mumbai_dem_clipped,Mumbai,ISRO CartoDEM,../data/terrain/mumbai_dem_clipped.tif,2026-09-04T09:22:45.054287Z
+mumbai_dem_filled,Mumbai,Derived from DEM,../data/terrain/mumbai_dem_filled.tif,2026-09-04T09:22:45.208588Z
+mumbai_flow_accumulation,Mumbai,Derived from DEM,../data/terrain/mumbai_flow_acc.tif,2026-09-04T09:22:45.377713Z
+SYNTHETIC_drainage_nodes,Mumbai,SYNTHETIC GENERATION,../data/drainage/mumbai_synthetic_nodes.geojson,2026-09-04T09:29:16.017882Z
+SYNTHETIC_drainage_pipes,Mumbai,SYNTHETIC GENERATION,../data/drainage/mumbai_synthetic_pipes.geojson,2026-09-04T09:29:16.020998Z
+SYNTHETIC_swmm_inp,Mumbai,SYNTHETIC GENERATION,../data/drainage/mumbai_synthetic.inp,2026-09-04T09:29:16.021450Z
+mumbai_baked_simulation,Mumbai,PySWMM,../data/events/mumbai_baked_simulation.json,2026-09-04T12:11:09.844160Z
+mumbai_baked_simulation,Mumbai,PySWMM,../data/events/mumbai_baked_simulation.json,2026-09-04T14:33:58.572688Z
