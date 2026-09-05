@@ -1,0 +1,35 @@
+# =============================================================================
+# SIH26085 Urban Flood Nowcasting — Runoff Coefficients Configuration
+# PRD-08 Land Surface & Runoff Parameters
+# =============================================================================
+# Rational Method / Imperviousness runoff coefficients (C)
+# Values represent initial model assumptions based on standard urban hydrology
+# literature (Chow, Maidment, Mays; IRC:SP:50-2013 Urban Drainage Manual).
+# Range: [0.0, 1.0] where 1.0 = completely impervious (100% surface runoff).
+
+coefficients:
+  building: 0.90         # Rooftops, reinforced concrete, high runoff
+  road: 0.95             # Asphalt, bitumen, and concrete pavements
+  commercial: 0.90       # Dense built-up commercial centers, paved plazas
+  residential: 0.75      # Mixed urban residential, partially paved compounds
+  vegetation: 0.30       # Urban parks, gardens, open tree cover, unpaved lawns
+  open_land: 0.40        # Barren soil, uncultivated open grounds
+  water: 1.00            # Existing waterbodies, canals, holding ponds
+  other: 0.50            # Unclassified urban fabric default fallback
+
+# Soil Conservation Service (SCS) Curve Numbers (CN) for hydrological soil groups
+scs_curve_numbers:
+  hydrologic_soil_group_b:
+    commercial: 92
+    residential_high_density: 85
+    residential_medium_density: 75
+    open_spaces_good_condition: 61
+    paved_roads_with_curbs: 98
+
+# Infiltration Model Settings (Horton / Green-Ampt fallback)
+infiltration_defaults:
+  horton:
+    max_rate_mm_hr: 75.0
+    min_rate_mm_hr: 10.0
+    decay_constant_hr: 4.0
+    drying_time_days: 7.0

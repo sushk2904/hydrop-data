@@ -1,0 +1,266 @@
+{
+  "timestamp": "2026-09-05T15:06:41.765088",
+  "framework": "SIH26085-QC-v1.0",
+  "results": [
+    {
+      "dataset": "mumbai_boundary",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\boundaries\\mumbai_boundary.geojson",
+      "type": "vector",
+      "status": "PASS",
+      "checks": {
+        "total_features": 1,
+        "crs": "EPSG:4326",
+        "null_geometries": 0,
+        "empty_geometries": 0,
+        "invalid_geometries": 0,
+        "duplicate_geometries": 0
+      },
+      "issues": []
+    },
+    {
+      "dataset": "mumbai_aoi_5km",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\boundaries\\mumbai_aoi_5km.geojson",
+      "type": "vector",
+      "status": "PASS",
+      "checks": {
+        "total_features": 1,
+        "crs": "EPSG:4326",
+        "null_geometries": 0,
+        "empty_geometries": 0,
+        "invalid_geometries": 0,
+        "duplicate_geometries": 0
+      },
+      "issues": []
+    },
+    {
+      "dataset": "mumbai_synthetic_nodes",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\drainage\\mumbai_synthetic_nodes.geojson",
+      "type": "vector",
+      "status": "PASS",
+      "checks": {
+        "total_features": 36862,
+        "crs": "EPSG:4326",
+        "null_geometries": 0,
+        "empty_geometries": 0,
+        "invalid_geometries": 0,
+        "duplicate_geometries": 0
+      },
+      "issues": []
+    },
+    {
+      "dataset": "mumbai_synthetic_pipes",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\drainage\\mumbai_synthetic_pipes.geojson",
+      "type": "vector",
+      "status": "PASS",
+      "checks": {
+        "total_features": 34620,
+        "crs": "EPSG:4326",
+        "null_geometries": 0,
+        "empty_geometries": 0,
+        "invalid_geometries": 0,
+        "duplicate_geometries": 0
+      },
+      "issues": []
+    },
+    {
+      "dataset": "mumbai_raw_cartodem",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\terrain\\mumbai_raw_cartodem.tif",
+      "type": "raster",
+      "status": "PASS",
+      "checks": {
+        "dimensions": [
+          751,
+          997
+        ],
+        "bands": 1,
+        "crs": "EPSG:4326",
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "nodata": null,
+        "bounds": [
+          72.77319443333334,
+          18.992638899999996,
+          72.98180554444446,
+          19.26958334444444
+        ],
+        "valid_pixel_pct": 100.0,
+        "min_val": -9.0846529006958,
+        "max_val": 488.6098327636719,
+        "mean_val": 32.18
+      },
+      "issues": []
+    },
+    {
+      "dataset": "mumbai_dem_clipped",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\terrain\\mumbai_dem_clipped.tif",
+      "type": "raster",
+      "status": "PASS",
+      "checks": {
+        "dimensions": [
+          751,
+          997
+        ],
+        "bands": 1,
+        "crs": "EPSG:4326",
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "nodata": null,
+        "bounds": [
+          72.77319443333334,
+          18.992638899999996,
+          72.98180554444446,
+          19.26958334444444
+        ],
+        "valid_pixel_pct": 100.0,
+        "min_val": -9.0846529006958,
+        "max_val": 488.6098327636719,
+        "mean_val": 31.652
+      },
+      "issues": []
+    },
+    {
+      "dataset": "mumbai_dem_filled",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\terrain\\mumbai_dem_filled.tif",
+      "type": "raster",
+      "status": "PASS",
+      "checks": {
+        "dimensions": [
+          751,
+          997
+        ],
+        "bands": 1,
+        "crs": "EPSG:4326",
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "nodata": 0.0,
+        "bounds": [
+          72.77319443333334,
+          18.992638899999996,
+          72.98180554444446,
+          19.26958334444444
+        ],
+        "valid_pixel_pct": 74.71,
+        "min_val": -8.860218048095703,
+        "max_val": 488.6098327636719,
+        "mean_val": 42.389
+      },
+      "issues": []
+    },
+    {
+      "dataset": "mumbai_flow_acc",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\terrain\\mumbai_flow_acc.tif",
+      "type": "raster",
+      "status": "PASS",
+      "checks": {
+        "dimensions": [
+          751,
+          997
+        ],
+        "bands": 1,
+        "crs": "EPSG:4326",
+        "resolution": [
+          0.0002777777777777778,
+          0.0002777777777777778
+        ],
+        "nodata": 0.0,
+        "bounds": [
+          72.77319443333334,
+          18.992638899999996,
+          72.98180554444446,
+          19.26958334444444
+        ],
+        "valid_pixel_pct": 74.71,
+        "min_val": 1.0,
+        "max_val": 1283.0,
+        "mean_val": 5.18
+      },
+      "issues": []
+    },
+    {
+      "dataset": "mumbai_synthetic_inp",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\drainage\\mumbai_synthetic.inp",
+      "type": "swmm_inp",
+      "status": "PASS",
+      "checks": {
+        "sections_found": [
+          "TITLE",
+          "JUNCTIONS",
+          "OUTFALLS",
+          "CONDUITS",
+          "XSECTIONS",
+          "COORDINATES",
+          "OPTIONS"
+        ],
+        "conduit_count": 39562,
+        "zero_negative_length_conduits": 0,
+        "outfall_count": 13552
+      },
+      "issues": []
+    },
+    {
+      "dataset": "mumbai_storm_inp",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\drainage\\mumbai_storm.inp",
+      "type": "swmm_inp",
+      "status": "PASS",
+      "checks": {
+        "sections_found": [
+          "TITLE",
+          "JUNCTIONS",
+          "OUTFALLS",
+          "CONDUITS",
+          "XSECTIONS",
+          "COORDINATES",
+          "OPTIONS",
+          "INFLOWS"
+        ],
+        "conduit_count": 39562,
+        "zero_negative_length_conduits": 0,
+        "outfall_count": 13552
+      },
+      "issues": []
+    },
+    {
+      "dataset": "simulation_events",
+      "path": "C:\\Users\\Saksham\\OneDrive\\Desktop\\hydrop-data\\urban-flood-data\\scripts\\..\\data\\events",
+      "type": "events",
+      "status": "PASS",
+      "checks": {
+        "total_event_files": 5,
+        "samples": [
+          {
+            "file": "historical_events.json",
+            "timesteps": 5,
+            "size_bytes": 2749
+          },
+          {
+            "file": "mumbai_baked_simulation.json",
+            "timesteps": 1,
+            "size_bytes": 754755
+          },
+          {
+            "file": "mumbai_baked_sim_LHS_00000.json",
+            "timesteps": 2,
+            "size_bytes": 1367708
+          },
+          {
+            "file": "mumbai_baked_sim_LHS_00001.json",
+            "timesteps": 2,
+            "size_bytes": 1903843
+          },
+          {
+            "file": "mumbai_baked_sim_LHS_00002.json",
+            "timesteps": 4,
+            "size_bytes": 1558462
+          }
+        ]
+      },
+      "issues": []
+    }
+  ]
+}

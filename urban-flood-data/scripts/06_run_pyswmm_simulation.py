@@ -43,6 +43,8 @@ def main():
 
     # Replace ROUTING_STEP to 15 seconds for Dynamic Wave stability if present
     content = content.replace("ROUTING_STEP         0:01:00", "ROUTING_STEP         0:00:15")
+    # [Fix F-007] Stabilize short conduits against Courant time-step collapse
+    content = content.replace("LENGTHENING_STEP     0", "LENGTHENING_STEP     15")
     # Reduce simulation length to 2 hours to avoid 50 min runtime
     content = content.replace("END_TIME             06:00:00", "END_TIME             02:00:00")
 
@@ -52,41 +54,49 @@ def main():
 
     print("Initializing PySWMM Simulation...")
     try:
+        from swmm.toolkit import solver
+        from swmm.toolkit.shared_enum import NodeResult, ObjectType
+
         with Simulation(storm_inp_path) as sim:
-            sim.step_advance(60) # 60 seconds reporting step size
+            sim.step_advance(60)  # 60 seconds reporting step size
             
-            nodes = Nodes(sim)
+            num_nodes = sim._model.getProjectSize(ObjectType.NODE.value)
+            print(f"Pre-caching {num_nodes:,} node IDs for accelerated C-API access...")
+            node_ids = [sim._model.getObjectId(ObjectType.NODE.value, i) for i in range(num_nodes)]
             
             print(f"Tracking 0.5 m^3/s injected into {num_nodes_to_inject} random nodes...")
             
             simulation_results = {}
             step_count = 0
+            flood_enum = NodeResult.FLOOD.value
+            depth_enum = NodeResult.DEPTH.value
             
-            print("Starting the physics event loop...")
+            print("Starting the physics event loop...", flush=True)
             for step in sim:
                 current_time = sim.current_time.isoformat()
                 
                 flooded_nodes_this_step = []
-                for node in Nodes(sim):
-                    if node.flooding > 0:
-                        nid = str(node.nodeid)
+                for idx in range(num_nodes):
+                    f = solver.node_get_result(idx, flood_enum)
+                    if f > 0:
+                        nid = node_ids[idx]
                         coords = node_coords.get(nid, {"lat": 0.0, "lon": 0.0})
                         flooded_nodes_this_step.append({
                             "node_id": nid,
                             "lat": coords["lat"],
                             "lon": coords["lon"],
-                            "overflow_cms": round(node.flooding, 4)
+                            "overflow_cms": round(f, 4)
                         })
                         
                 if flooded_nodes_this_step:
                     simulation_results[current_time] = flooded_nodes_this_step
                 
                 step_count += 1
-                if step_count % 60 == 0:
-                    print(f"Processed 60 steps. Current simulation time: {current_time}")
+                if step_count % 10 == 0 or step_count <= 5:
+                    print(f"Step {step_count:3d} (sim time: {current_time}) — flooded nodes: {len(flooded_nodes_this_step):,}", flush=True)
                     
     except Exception as e:
-        print(f"Simulation failed: {e}")
+        print(f"Simulation failed: {e}", flush=True)
         traceback.print_exc()
         return
 
