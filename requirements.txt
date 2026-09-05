@@ -6,3 +6,8 @@ xarray
 netCDF4
 requests
 earthaccess
+
+pyswmm
+scipy
+tqdm
+numpy
