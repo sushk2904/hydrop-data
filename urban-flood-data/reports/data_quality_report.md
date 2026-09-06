@@ -1,5 +1,5 @@
 # Automated Dataset Quality Control Report
-**Generated:** 2026-09-05T15:06:41.765088  
+**Generated:** 2026-09-06T18:01:51.264921  
 **Project:** SIH26085 Urban Flood Nowcasting  
 **Status Summary:** 11 PASS | 0 WARN | 0 FAIL  
 
@@ -15,7 +15,7 @@
 | `mumbai_flow_acc` | raster | ✅ PASS | 751x997 | None (Clean) |
 | `mumbai_synthetic_inp` | swmm_inp | ✅ PASS | 39,562 conduits | None (Clean) |
 | `mumbai_storm_inp` | swmm_inp | ✅ PASS | 39,562 conduits | None (Clean) |
-| `simulation_events` | events | ✅ PASS | 5 files | None (Clean) |
+| `simulation_events` | events | ✅ PASS | 2 files | None (Clean) |
 
 ## Category Findings & Diagnostics
 

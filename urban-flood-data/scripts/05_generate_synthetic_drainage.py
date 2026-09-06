@@ -97,12 +97,36 @@ def main():
     is_dag = nx.is_directed_acyclic_graph(D)
     print(f"Is Directed Acyclic Graph (DAG)? {is_dag}")
     
-    print("Exporting GeoJSONs...")
+    print("Sampling flow accumulation from DEM for catchment area estimation (PRD-07)...")
+    flow_acc_path = "../data/terrain/mumbai_flow_acc.tif"
+    node_catchment = {}
+    if os.path.exists(flow_acc_path):
+        with rasterio.open(flow_acc_path) as acc_src:
+            for node, data in D.nodes(data=True):
+                try:
+                    for val in acc_src.sample([(data['x'], data['y'])]):
+                        acc = float(val[0])
+                        # Baseline street catchment (500 m²) + flow accumulation tributary area, capped to 5000 m²
+                        node_catchment[node] = round(min(5000.0, 500.0 + max(0.0, acc) * 250.0), 1)
+                        break
+                except Exception:
+                    node_catchment[node] = 500.0
+    else:
+        for node in D.nodes():
+            node_catchment[node] = 500.0
+
+    print("Exporting GeoJSONs with PRD-07 node attributes...")
     nodes_data = []
     for node, data in D.nodes(data=True):
+        # Determine downstream node from directed graph successors
+        successors = list(D.successors(node))
+        downstream = str(successors[0]) if successors else "OUTFALL"
         nodes_data.append({
             'id': str(node),
             'elevation': data['elevation'],
+            'catchment_area': node_catchment.get(node, 500.0),
+            'downstream_node': downstream,
+            'surface_type': 'urban_impervious',
             'geometry': Point(data['x'], data['y'])
         })
     nodes_gdf = gpd.GeoDataFrame(nodes_data, crs="EPSG:4326")

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-09-05T15:06:41.765088",
+  "timestamp": "2026-09-06T18:01:51.264921",
   "framework": "SIH26085-QC-v1.0",
   "results": [
     {
@@ -231,13 +231,8 @@
       "type": "events",
       "status": "PASS",
       "checks": {
-        "total_event_files": 5,
+        "total_event_files": 2,
         "samples": [
-          {
-            "file": "historical_events.json",
-            "timesteps": 5,
-            "size_bytes": 2749
-          },
           {
             "file": "mumbai_baked_simulation.json",
             "timesteps": 1,
@@ -245,18 +240,8 @@
           },
           {
             "file": "mumbai_baked_sim_LHS_00000.json",
-            "timesteps": 2,
-            "size_bytes": 1367708
-          },
-          {
-            "file": "mumbai_baked_sim_LHS_00001.json",
-            "timesteps": 2,
-            "size_bytes": 1903843
-          },
-          {
-            "file": "mumbai_baked_sim_LHS_00002.json",
-            "timesteps": 4,
-            "size_bytes": 1558462
+            "timesteps": 39,
+            "size_bytes": 2348199
           }
         ]
       },
